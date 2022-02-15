@@ -132,6 +132,7 @@ var envParsers = map[string]func(string){
 
 // Parse the flags
 func init() {
+    log.Println("[Env init]")
 	ResetWithEnv("")
 }
 
@@ -160,9 +161,11 @@ func ResetWithEnv(env string) {
 	Reset()
 
 	b, _ := ioutil.ReadFile(".rod")
+    log.Printf("[ENV .rod] %s", string(b))
 	parse(string(b))
 
 	parse(os.Getenv("rod"))
+    log.Printf("[ENV .rod] %s", os.Getenv("rod"))
 
 	parse(env)
 }

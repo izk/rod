@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+    "log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -49,6 +50,7 @@ func New() *Launcher {
 		dir = filepath.Join(DefaultUserDataDirPrefix, utils.RandString(8))
 	}
 
+    log.Printf("[Env Bin] %s", defaults.Bin)
 	defaultFlags := map[flags.Flag][]string{
 		flags.Bin:      {defaults.Bin},
 		flags.Leakless: nil,
