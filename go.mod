@@ -1,4 +1,4 @@
-module github.com/go-rod/rod
+module github.com/izk/rod
 
 go 1.16
 
@@ -9,3 +9,5 @@ require (
 	github.com/ysmood/gson v0.6.4
 	github.com/ysmood/leakless v0.7.0
 )
+
+replace github.com/go-rod/rod => ./
